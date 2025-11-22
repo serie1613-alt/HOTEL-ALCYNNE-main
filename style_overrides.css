@@ -1,0 +1,2122 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap");
+@import url("https://fonts.cdnfonts.com/css/medino");
+@import url("https://fonts.cdnfonts.com/css/delphia-village");
+/* Overrides específicos para ajustes finales */
+
+/* Franja de marca: reforzar separación visual bajo el navbar */
+.brand-strip {
+  border-top: 1px solid rgba(0, 0, 0, 0.1) !important; /* línea sutil bajo el navbar */
+  /* sombra suave hacia arriba para separar del navbar */
+  box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Mantener limpio en modo oscuro */
+body.dark-mode .brand-strip {
+  border-top: none !important;
+  box-shadow: none !important;
+}
+
+/* Navbar: fondo naranja y sombra sutil en modo claro */
+.nav-contenedor {
+  background: var(--navbar-bg);
+  border-bottom: 2px solid var(--navbar-border);
+  box-shadow: var(--navbar-shadow);
+}
+
+/* Links y marca en blanco para mejor contraste sobre naranja */
+.nav-contenedor a {
+  color: var(--navbar-text);
+  transition: color 0.2s ease, background 0.2s ease,
+    text-decoration-color 0.2s ease;
+}
+
+.nav-contenedor a:hover,
+.nav-contenedor a.active {
+  color: var(--navbar-text);
+  background: var(--navbar-hover);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.brand-text {
+  color: var(--navbar-text);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  font-size: 1.9rem;
+  line-height: 1.1;
+}
+
+/* Fuente del texto de marca del navbar */
+.nav-contenedor .brand-text {
+  font-family: "Playfair Display", serif !important;
+  letter-spacing: 0.01em !important; /* separación apenas perceptible */
+}
+
+/* Botón de modo oscuro con colores coherentes */
+.nav-contenedor .dark-mode-btn {
+  border-color: rgba(255, 255, 255, 0.6);
+  color: var(--navbar-text);
+}
+
+.nav-contenedor .dark-mode-btn:hover {
+  background: var(--navbar-hover);
+}
+
+/* Ajuste de tamaño del logo para mejorar presencia visual */
+.nav-logo {
+  height: 46px;
+}
+
+/* Logo y texto de marca más grandes para aprovechar altura */
+.nav-logo {
+  height: 44px;
+}
+
+.brand-text {
+  font-size: 1.6rem;
+  line-height: 1.1;
+}
+
+/* Carrusel de fondo del header: transición y opacidad correctas */
+.header-bg-slider .header-slide {
+  transition: opacity 2.5s ease-in-out;
+}
+
+.header-bg-slider .header-slide.active {
+  opacity: 1;
+}
+/* Variables globales para el navbar */
+:root {
+  --navbar-bg: #ffffff; /* fondo blanco */
+  --navbar-border: #e5e7eb; /* gris claro para borde */
+  --navbar-hover: rgba(0, 0, 0, 0.06); /* hover sutil sobre blanco */
+  --navbar-text: #111111; /* texto oscuro para contraste */
+  --navbar-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Variante de modo oscuro (si el body usa .dark-mode) */
+body.dark-mode {
+  --navbar-bg: #7f1d1d; /* red-800 aproximado */
+  --navbar-border: #6b1212; /* borde más oscuro */
+  --navbar-hover: rgba(255, 255, 255, 0.12);
+  --navbar-text: #ffffff;
+  --navbar-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+/* Overrides adicionales para maximizar tamaño sin tocar HTML */
+.nav-logo {
+  height: 52px;
+}
+
+.brand-text {
+  font-size: 2.2rem;
+  line-height: 1.1;
+}
+
+.nav-contenedor a {
+  font-size: 1.1rem;
+  padding: 0.6rem 1rem;
+}
+
+.nav-contenedor {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+/* Ajustes para parecerse al navbar del snippet (taquería) */
+.brand-text {
+  font-size: 2.25rem; /* Tailwind text-4xl ≈ 2.25rem */
+}
+
+.nav-contenedor a {
+  font-size: 1.25rem; /* Tailwind text-xl ≈ 1.25rem */
+}
+
+.nav-contenedor a:hover,
+.nav-contenedor a.active {
+  color: #fde047; /* Tailwind yellow-300 */
+  background: none; /* sin fondo en hover como el snippet */
+  text-decoration: none;
+}
+
+.nav-contenedor {
+  padding-top: 1rem; /* Tailwind p-4 vertical */
+  padding-bottom: 1rem;
+}
+/* Marca más gruesa */
+.brand-text {
+  font-weight: 800;
+}
+/* Marca aún más gruesa */
+.brand-text {
+  font-weight: 900;
+}
+/* Reducir tamaño de letras de enlaces del navbar (Nosotros, etc.) */
+.nav-contenedor a {
+  font-size: 0.95rem;
+}
+/* Ajustes complementarios: espaciado, activo, móvil, sombra/borde */
+:root {
+  --navbar-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.nav-contenedor a {
+  margin-right: 0.75rem;
+}
+
+.nav-contenedor a:last-child {
+  margin-right: 0;
+}
+
+.nav-contenedor a.active {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.nav-contenedor {
+  border-bottom-width: 1px;
+}
+
+@media (max-width: 640px) {
+  .nav-logo {
+    height: 44px;
+  }
+  .brand-text {
+    font-size: 2rem;
+  }
+  .nav-contenedor a {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+    margin-right: 0.5rem;
+  }
+  .nav-contenedor {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+/* Reducir altura y espaciado del header con carrusel */
+header {
+  min-height: 480px;
+  padding: var(--spacing-sm) var(--spacing-lg) var(--spacing-md)
+    var(--spacing-lg);
+}
+
+/* El logo tenía un margen inferior muy grande que aumentaba la altura */
+.logo {
+  margin-bottom: 3rem;
+}
+
+/* Responsivo: aún más compacto en pantallas pequeñas */
+@media (max-width: 768px) {
+  /* Navbar estático en móvil */
+  .nav-contenedor {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    z-index: auto !important;
+  }
+  header {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    min-height: 300px;
+  }
+}
+/* Ampliar altura del header y margen del logo (versión más grande) */
+header {
+  min-height: 620px;
+  padding: var(--spacing-sm) var(--spacing-lg) var(--spacing-xl)
+    var(--spacing-lg);
+}
+
+.logo {
+  margin-bottom: 8rem;
+}
+
+@media (max-width: 768px) {
+  header {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    min-height: 360px;
+  }
+}
+/* Ajuste fino: bajar un poco la altura del header y margen del logo */
+header {
+  min-height: 560px;
+  padding: var(--spacing-sm) var(--spacing-lg) var(--spacing-xl)
+    var(--spacing-lg);
+}
+
+.logo {
+  margin-bottom: 6rem;
+}
+
+@media (max-width: 768px) {
+  header {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    min-height: 340px;
+  }
+}
+/* Bajar la posición del header sin cambiar su altura */
+header {
+  margin-top: calc(75px + 48px); /* altura del navbar + extra */
+}
+/* Mantener espacio superior y agregar espacio inferior al header */
+header {
+  margin-top: calc(75px + 12px); /* igual que estilo base */
+  margin-bottom: 48px; /* más espacio por debajo, sin mover arriba */
+}
+/* Revertir header al estado original (espaciado y altura) */
+header {
+  margin-top: calc(75px + 12px);
+  margin-bottom: 0;
+  min-height: 700px;
+  padding: var(--spacing-sm) var(--spacing-lg) var(--spacing-xl)
+    var(--spacing-lg);
+}
+
+.logo {
+  margin-bottom: 19rem;
+}
+
+/* Compactar espacios superior e inferior del header */
+header {
+  padding-top: 8px; /* menos espacio arriba */
+  padding-bottom: 12px; /* menos espacio abajo */
+}
+
+.logo {
+  margin-bottom: 6rem; /* reduce el espacio bajo el logo */
+}
+/* Ajustar altura visual del header a ~15.5 cm (≈0.5 cm menos) */
+header {
+  min-height: 678px; /* 700px - 22px ≈ 15.5cm en pantalla actual */
+}
+
+.logo {
+  margin-bottom: calc(19rem - 22px);
+}
+/* Redes sociales: iconos circulares con fondo suave y acento en hover */
+.social-links {
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  justify-content: center;
+}
+
+.social-links a {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin: 0 6px;
+  padding: 0;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  color: #555;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-links a:hover {
+  background: #ffffff;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Unificar colores (sobre escribir clases específicas por red) */
+.social-links a.facebook,
+.social-links a.instagram,
+.social-links a.twitter,
+.social-links a.whatsapp {
+  color: #555;
+}
+
+.social-links a.facebook:hover,
+.social-links a.instagram:hover,
+.social-links a.twitter:hover,
+.social-links a.whatsapp:hover {
+  color: var(--color-primary);
+}
+
+body.dark-mode .social-links a {
+  background: #1f2937;
+  border-color: #374151;
+  color: #ddd;
+  box-shadow: none;
+}
+
+body.dark-mode .social-links a:hover {
+  background: #111827;
+  color: var(--color-primary-light);
+  border-color: var(--color-primary-light);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+/* Footer: simplificar redes sociales y enlaces legales, sin tocar la franja inferior */
+.social-links {
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  justify-content: center;
+}
+
+.social-links a {
+  font-size: 1.6rem; /* antes 2.2rem */
+  margin: 0 8px; /* antes 25px */
+  padding: 6px; /* antes 10px */
+  color: #555; /* tono más neutro en modo claro */
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-links a:hover {
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+body.dark-mode .social-links a {
+  color: #ddd;
+}
+
+body.dark-mode .social-links a:hover {
+  color: var(--color-primary-light);
+}
+
+.legal-links-container {
+  flex-direction: row; /* en línea, más compacto */
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.legal-links-container a {
+  background: transparent !important; /* quitar fondos de nth-child */
+  color: #555;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  text-decoration: none;
+  border-bottom: 1px solid transparent; /* subrayado sutil al pasar */
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.legal-links-container a:hover {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+body.dark-mode .legal-links-container a {
+  color: #ddd;
+}
+
+body.dark-mode .legal-links-container a:hover {
+  color: var(--color-primary-light);
+  border-bottom-color: var(--color-primary-light);
+}
+/* Footer: layout en tres columnas (izquierda texto, centro redes, derecha legales) */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 2rem 5% 1rem;
+}
+
+.footer-col {
+  flex: 1 1 0;
+}
+
+.footer-col.left {
+  text-align: left;
+}
+.footer-col.center {
+  text-align: center;
+}
+.footer-col.right {
+  text-align: right;
+}
+
+/* Ajuste de títulos para cohesión visual */
+.footer-col h3 {
+  margin-bottom: 0.5rem;
+}
+.footer-col.left p {
+  margin: 0;
+  color: #555;
+}
+body.dark-mode .footer-col.left p {
+  color: #ddd;
+}
+
+/* Responsivo: apilar en móviles */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem 5% 0.5rem;
+  }
+  .footer-col.left,
+  .footer-col.center,
+  .footer-col.right {
+    text-align: center;
+  }
+}
+/* Avisos legales en columna, uno debajo del otro */
+.legal-links-container {
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .legal-links-container {
+    align-items: center;
+  }
+}
+
+/* Color solicitado para textos de avisos legales */
+.legal-links-container a {
+  color: #0052aa !important;
+}
+
+.legal-links-container a:hover {
+  color: #0052aa; /* mantener el mismo tono */
+  border-bottom-color: #0052aa;
+}
+
+body.dark-mode .legal-links-container a {
+  color: #8edfff; /* mantener legibilidad en modo oscuro */
+}
+
+body.dark-mode .legal-links-container a:hover {
+  color: #8edfff;
+  border-bottom-color: #8edfff;
+}
+/* Footer: fondo uniforme #2c3e50 respetando la línea divisoria */
+footer {
+  background-color: #2c3e50 !important;
+}
+
+body.dark-mode footer {
+  background-color: #2c3e50 !important;
+}
+
+/* Footer: texto blanco en modo claro; acentos en modo oscuro */
+footer,
+.footer-col h3,
+.footer-col.left p,
+.footer-text,
+.credits {
+  color: #ffffff;
+}
+
+.social-links a {
+  color: #ffffff;
+}
+
+.social-links a:hover {
+  color: var(--color-primary);
+}
+
+.legal-links-container a {
+  color: #ffffff !important;
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
+.legal-links-container a:hover {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+/* Modo oscuro: mantener legibilidad y acentos azules para legales */
+body.dark-mode .footer-col h3,
+body.dark-mode .footer-col.left p,
+body.dark-mode .footer-text,
+body.dark-mode .credits {
+  color: #ffffff;
+}
+
+body.dark-mode .legal-links-container a {
+  color: #8edfff !important;
+}
+
+body.dark-mode .legal-links-container a:hover {
+  color: #8edfff;
+  border-bottom-color: #8edfff;
+}
+
+body.dark-mode .social-links a {
+  color: #ddd;
+}
+/* Redes sociales: restaurar colores originales de cada marca */
+.social-links a {
+  color: inherit;
+}
+
+.social-links a.facebook {
+  color: #4267b2;
+}
+.social-links a.instagram {
+  color: #e1306c;
+}
+.social-links a.twitter {
+  color: #1da1f2;
+}
+.social-links a.whatsapp {
+  color: #25d366;
+}
+
+.social-links a.facebook:hover {
+  color: #5c7cfa;
+}
+.social-links a.instagram:hover {
+  color: #ff1493;
+}
+.social-links a.twitter:hover {
+  color: #00bfff;
+}
+.social-links a.whatsapp:hover {
+  color: #00ff7f;
+}
+
+body.dark-mode .social-links a.facebook {
+  color: #4267b2;
+}
+body.dark-mode .social-links a.instagram {
+  color: #e1306c;
+}
+body.dark-mode .social-links a.twitter {
+  color: #1da1f2;
+}
+body.dark-mode .social-links a.whatsapp {
+  color: #25d366;
+}
+
+body.dark-mode .social-links a.facebook:hover {
+  color: #5c7cfa;
+}
+body.dark-mode .social-links a.instagram:hover {
+  color: #ff1493;
+}
+body.dark-mode .social-links a.twitter:hover {
+  color: #00bfff;
+}
+body.dark-mode .social-links a.whatsapp:hover {
+  color: #00ff7f;
+}
+/* Redes sociales: estilo original y colores de marca en los íconos */
+.social-links a {
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  display: inline-block;
+  font-size: 2.2rem; /* tamaño original */
+  margin: 0 25px; /* espaciado original */
+  padding: 10px; /* padding original */
+  color: inherit; /* que el ícono defina su color */
+}
+
+/* Colores de marca aplicados al ícono Font Awesome */
+.social-links i.fa-facebook {
+  color: #4267b2;
+}
+.social-links i.fa-instagram {
+  color: #e1306c;
+}
+.social-links i.fa-twitter {
+  color: #1da1f2;
+}
+.social-links i.fa-whatsapp {
+  color: #25d366;
+}
+
+/* Hover: tonos de acento por marca */
+.social-links a:hover i.fa-facebook {
+  color: #5c7cfa;
+}
+.social-links a:hover i.fa-instagram {
+  color: #ff1493;
+}
+.social-links a:hover i.fa-twitter {
+  color: #00bfff;
+}
+.social-links a:hover i.fa-whatsapp {
+  color: #00ff7f;
+}
+
+/* Modo oscuro: mantener colores de marca en íconos */
+body.dark-mode .social-links i.fa-facebook {
+  color: #4267b2;
+}
+body.dark-mode .social-links i.fa-instagram {
+  color: #e1306c;
+}
+body.dark-mode .social-links i.fa-twitter {
+  color: #1da1f2;
+}
+body.dark-mode .social-links i.fa-whatsapp {
+  color: #25d366;
+}
+
+body.dark-mode .social-links a:hover i.fa-facebook {
+  color: #5c7cfa;
+}
+body.dark-mode .social-links a:hover i.fa-instagram {
+  color: #ff1493;
+}
+body.dark-mode .social-links a:hover i.fa-twitter {
+  color: #00bfff;
+}
+body.dark-mode .social-links a:hover i.fa-whatsapp {
+  color: #00ff7f;
+}
+/* Quitar fondo en modo oscuro para los iconos de redes */
+body.dark-mode .social-links a {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+/* Forzar textos legales en blanco en modo claro y oscuro */
+.legal-links-container a {
+  color: #ffffff !important;
+  border-bottom-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.legal-links-container a:hover {
+  color: #ffffff !important;
+  border-bottom-color: #ffffff !important;
+}
+
+body.dark-mode .legal-links-container a {
+  color: #ffffff !important;
+}
+
+body.dark-mode .legal-links-container a:hover {
+  color: #ffffff !important;
+  border-bottom-color: #ffffff !important;
+}
+/* Créditos: tono más claro para mayor legibilidad */
+.credits {
+  color: #fca5a5 !important; /* rojo claro */
+}
+
+body.dark-mode .credits {
+  color: #fca5a5 !important;
+}
+
+.credits:hover {
+  color: #f87171 !important; /* un tono más intenso al hover */
+}
+/* Subrayado de enlaces legales en rojo (igual al navbar) */
+.legal-links-container a {
+  border-bottom: 1px solid var(--navbar-bg) !important;
+}
+
+.legal-links-container a:hover {
+  border-bottom-color: var(--navbar-bg) !important;
+}
+
+body.dark-mode .legal-links-container a {
+  border-bottom-color: var(--navbar-bg) !important;
+}
+
+body.dark-mode .legal-links-container a:hover {
+  border-bottom-color: var(--navbar-bg) !important;
+}
+
+/* Redes sociales: quitar fondo blanco al pasar el cursor (modo claro) */
+body:not(.dark-mode) .social-links a,
+body:not(.dark-mode) .social-links a:hover {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Footer: mejoras específicas para pantallas móviles */
+@media (max-width: 600px) {
+  footer {
+    padding: 1rem 5% 0.5rem !important;
+    text-align: center;
+  }
+  .footer-top {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    padding: 1rem 5% 0.5rem !important;
+  }
+  .footer-col.left,
+  .footer-col.center,
+  .footer-col.right {
+    text-align: center !important;
+  }
+  .footer-col h3 {
+    font-size: 1.1rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+  .footer-col.left p {
+    font-size: 0.95rem !important;
+    margin: 0.25rem 0 0 !important;
+  }
+  .social-links {
+    gap: 0.5rem !important;
+    margin-top: 0.5rem !important;
+    justify-content: center !important;
+    flex-wrap: wrap;
+  }
+  .social-links a {
+    font-size: 1.4rem !important;
+    margin: 0 10px !important;
+    padding: 4px !important;
+  }
+  .legal-links-container {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.4rem !important;
+  }
+  .legal-links-container a {
+    padding: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    font-size: 0.95rem !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
+  }
+}
+
+/* Footer: centrar contenido en todas las vistas */
+footer {
+  text-align: center !important;
+}
+.footer-top {
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  flex-wrap: wrap !important;
+}
+.footer-col {
+  flex: 0 0 auto !important;
+}
+.footer-col.left,
+.footer-col.center,
+.footer-col.right {
+  text-align: center !important;
+}
+.legal-links {
+  text-align: center !important;
+}
+.legal-links-container {
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Footer: asegurar que la parte inferior también quede centrada */
+.footer-bottom {
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+.footer-text {
+  padding-right: 0 !important;
+  text-align: center !important;
+}
+
+/* Footer: visibilidad y contraste en pantallas móviles */
+@media (max-width: 768px) {
+  footer {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    background-color: #2c3e50 !important;
+    color: #ffffff !important;
+  }
+  .footer-bottom,
+  .footer-top {
+    display: flex !important;
+  }
+  .footer-col h3,
+  .footer-col.left p,
+  .footer-text,
+  .credits {
+    color: #ffffff !important;
+  }
+}
+
+/* Unificación de estilo para enlaces legales (marca azul en claro y acento en oscuro) */
+.legal-links-container a {
+  color: #0052aa !important; /* azul corporativo */
+  background: transparent !important;
+  text-shadow: none !important;
+  border-bottom: 1px solid #0052aa !important;
+}
+.legal-links-container a:hover {
+  color: #0052aa !important;
+  border-bottom-color: #0052aa !important;
+}
+body.dark-mode .legal-links-container a {
+  color: #8edfff !important; /* acento legible en oscuro */
+  border-bottom-color: #8edfff !important;
+}
+body.dark-mode .legal-links-container a:hover {
+  color: #8edfff !important;
+  border-bottom-color: #8edfff !important;
+}
+/* Contacto: dos columnas, WiFi izquierda y Pago derecha */
+#contacto {
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch; /* iguala alturas de los fondos */
+  gap: 4.5cm; /* separación aumentada en 2 cm más */
+}
+
+#wifi {
+  grid-column: 1;
+  text-align: left;
+}
+
+#pagos {
+  grid-column: 2;
+  text-align: right;
+}
+
+/* Asegurar que los items ocupen la misma altura del contenedor */
+#contacto .contacto-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#wifi .img-qr,
+#wifi p,
+#wifi h3 {
+  margin-left: 0;
+}
+
+#pagos .img-pagos,
+#pagos p,
+#pagos h3 {
+  margin-right: 0;
+}
+
+@media (max-width: 768px) {
+  #contacto {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    overflow-x: hidden !important;
+  }
+  #contacto .contacto-item {
+    flex: 1 1 auto !important;
+    min-width: auto !important;
+    margin-bottom: 0 !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 1rem !important;
+  }
+  #wifi,
+  #pagos {
+    text-align: center !important;
+  }
+  #contacto .img-qr {
+    width: 170px !important;
+    height: 170px !important;
+  }
+  #contacto .img-pagos {
+    max-width: 200px !important;
+    max-height: 160px !important;
+  }
+  #contacto .contacto-item h3 {
+    font-size: 1.25rem !important;
+  }
+}
+
+/* Contacto: igualar tamaños de títulos e imágenes */
+#contacto .contacto-item h3 {
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+
+#contacto .img-pagos {
+  max-width: 260px;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+}
+
+#contacto .img-qr {
+  width: 200px;
+  height: 200px;
+}
+
+/* Evitar escalonado por margen inferior en items de contacto */
+#contacto .contacto-item {
+  margin-bottom: 0 !important;
+}
+
+/* Orden explícito: WiFi izquierda, Pago derecha */
+#wifi {
+  order: 1;
+}
+#pagos {
+  order: 2;
+}
+/* Habitaciones: sin fondo en todos los modos */
+#habitaciones {
+  background: transparent !important;
+}
+
+body.dark-mode #habitaciones {
+  background: transparent !important;
+}
+
+/* Acordeón de habitaciones: tarjetas sin fondo en todos los modos */
+.acordeon-item {
+  background-color: rgb(219, 230, 246);
+  border: 6px solid var(--color-primary) !important;
+  box-shadow: var(--shadow-md) !important;
+  transition: var(--transition-normal) !important;
+  will-change: transform, box-shadow;
+}
+
+body.dark-mode .acordeon-item {
+  background: transparent !important;
+}
+
+/* Habitaciones: detalles sin fondo en todos los modos */
+.acordeon-detalles {
+  background: transparent !important;
+}
+
+body.dark-mode .acordeon-detalles {
+  background: transparent !important;
+}
+
+/* Habitaciones: texto de detalles legible en modo claro */
+body:not(.dark-mode) .acordeon-detalles li {
+  color: var(--text-dark) !important;
+}
+
+/* Habitaciones: efecto hover tipo contacto (elevación, sombra y borde) */
+.acordeon-item:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+  border-color: var(--color-primary) !important;
+}
+
+/* Galería: quitar fondo en todos los modos */
+#galeria {
+  background: transparent !important;
+}
+
+body.dark-mode #galeria {
+  background: transparent !important;
+}
+
+/* Galería: ampliar contenedor para ganar ancho disponible */
+#galeria.container {
+  width: 98% !important;
+  max-width: 1600px !important;
+}
+
+/* Galería: imágenes más grandes y 4 columnas en escritorio */
+.product-grid {
+  grid-template-columns: repeat(4, 1fr) !important;
+}
+
+.img-galeria {
+  height: 280px !important;
+}
+
+/* Reducir separación para ganar ancho por tarjeta */
+.product-grid {
+  gap: var(--spacing-xs) !important;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  .img-galeria {
+    height: 240px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .img-galeria {
+    height: 200px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .img-galeria {
+    height: 180px !important;
+  }
+}
+/* Contacto: quitar fondo de sección y de tarjetas WiFi/Pagos */
+#contacto {
+  background: transparent !important;
+}
+
+body.dark-mode #contacto {
+  background: transparent !important;
+}
+
+.contacto-item {
+  background: transparent !important;
+}
+
+body.dark-mode .contacto-item {
+  background: transparent !important;
+}
+
+/* Contacto: efecto tipo habitaciones (hover lift y sombra) */
+#contacto .contacto-item {
+  border: 6px solid blue !important;
+  box-shadow: var(--shadow-md) !important;
+  transition: var(--transition-normal) !important;
+  will-change: transform, box-shadow;
+}
+
+#contacto .contacto-item:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+  border-color: var(--color-primary) !important;
+}
+
+/* Formulario de contacto: estilos */
+#contacto-form h2 {
+  text-align: center;
+  color: var(--color-primary);
+  font-size: 2.4rem;
+  letter-spacing: 0.2px;
+  font-weight: 700;
+}
+
+body.dark-mode #contacto-form h2 {
+  color: var(--color-primary-light);
+}
+
+#contacto-form .contacto-item {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(8px);
+  border: 6px solid blue !important;
+}
+
+body.dark-mode #contacto-form .contacto-item {
+  background: rgba(31, 41, 55, 0.55);
+  border-color: #374151;
+}
+
+#contacto-form .form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+/* Escalonado sutil entre campos */
+#contacto-form .form-grid label:nth-child(2) {
+  margin-left: 0.5rem;
+}
+#contacto-form .form-grid label:nth-child(3) {
+  margin-left: 1rem;
+}
+
+@media (max-width: 768px) {
+  #contacto-form .form-grid label {
+    margin-left: 0 !important;
+  }
+}
+
+#contacto-form label {
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+#contacto-form input[type="text"],
+#contacto-form input[type="email"],
+#contacto-form input[type="tel"],
+#contacto-form textarea {
+  background: var(--bg-white);
+  color: var(--text-dark);
+  border: 2px solid blue !important;
+  border-radius: var(--radius-xl) !important;
+  padding: 1rem 1.15rem;
+  font-size: 1.05rem;
+  outline: none;
+  transition: var(--transition-normal);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+body.dark-mode #contacto-form input[type="text"],
+body.dark-mode #contacto-form input[type="email"],
+body.dark-mode #contacto-form input[type="tel"],
+body.dark-mode #contacto-form textarea {
+  background: #1f2937;
+  color: #e5e7eb;
+  border-color: #475569;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+}
+
+#contacto-form input::placeholder,
+#contacto-form textarea::placeholder {
+  color: #9ca3af;
+}
+
+body.dark-mode #contacto-form input::placeholder,
+body.dark-mode #contacto-form textarea::placeholder {
+  color: #a1a9b3;
+}
+
+#contacto-form input:focus,
+#contacto-form textarea:focus {
+  border-color: blue !important;
+  box-shadow: 0 0 0 3px rgba(0, 0, 255, 0.18) !important;
+}
+
+#contacto-form .checkbox {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+#contacto-form .btn-enviar {
+  background: linear-gradient(135deg, var(--color-primary), #1f56d6);
+  color: #fff;
+  border: none;
+  padding: 1.1rem 1.4rem;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-top: var(--spacing-md);
+  transition: var(--transition-normal);
+  width: 100%;
+}
+
+body.dark-mode #contacto-form .btn-enviar {
+  background: linear-gradient(135deg, var(--color-primary-light), #3b82f6);
+}
+
+#contacto-form .btn-enviar:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+#contacto-form .contacto-msg {
+  margin-top: var(--spacing-sm);
+  color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+  #contacto-form .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Nosotros: quitar fondo de la sección y del bloque interno */
+#nosotros {
+  background: transparent !important;
+}
+
+body.dark-mode #nosotros {
+  background: transparent !important;
+}
+
+.valores-principales {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body.dark-mode .valores-principales {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Reglamento: sin fondo en todos los modos */
+#reglamento {
+  background: transparent !important;
+}
+
+body.dark-mode #reglamento {
+  background: transparent !important;
+}
+
+/* Ubicación: sin fondo en todos los modos */
+#ubicacion {
+  background: transparent !important;
+}
+
+body.dark-mode #ubicacion {
+  background: transparent !important;
+}
+
+/* Aumentar tamaño de imágenes en el encabezado del acordeón (desktop) */
+.acordeon-header img {
+  width: 220px !important;
+  height: 150px !important;
+  object-fit: cover;
+}
+
+/* Ajuste en móvil: imagen a ancho completo y un poco más alta */
+@media (max-width: 768px) {
+  .acordeon-header img {
+    width: 100% !important;
+    height: 170px !important;
+  }
+}
+/* Habitaciones: eliminar fondo gris en hover del encabezado en modo claro */
+body:not(.dark-mode) .acordeon-header:hover {
+  background: transparent !important;
+}
+
+/* Habitaciones: eliminar fondo oscuro en hover del encabezado en modo oscuro */
+body.dark-mode .acordeon-header:hover {
+  background: transparent !important;
+}
+
+/* Ubicación: versión más compacta */
+#ubicacion {
+  padding: 2rem 0 !important;
+}
+
+#ubicacion h2 {
+  font-size: 2rem !important;
+}
+
+.ubicacion-content {
+  gap: var(--spacing-md) !important;
+}
+
+.mapa-container {
+  height: 600px !important;
+}
+
+.info-ubicacion {
+  gap: var(--spacing-sm) !important;
+}
+
+.info-item {
+  padding: var(--spacing-sm) !important;
+}
+
+.info-item i {
+  font-size: 1.2rem !important;
+  min-width: 24px !important;
+}
+
+.info-item h3 {
+  font-size: 1rem !important;
+}
+
+.info-item p {
+  line-height: 1.4 !important;
+  font-size: 0.95rem !important;
+}
+
+@media (max-width: 768px) {
+  #ubicacion {
+    padding: 1.5rem 0 !important;
+  }
+  #ubicacion h2 {
+    font-size: 1.6rem !important;
+  }
+  .mapa-container {
+    height: 240px !important;
+  }
+}
+
+/* Ubicación: ajuste adicional más compacto */
+#ubicacion {
+  padding: 1.25rem 0 !important;
+}
+
+#ubicacion h2 {
+  font-size: 1.7rem !important;
+}
+
+.ubicacion-content {
+  gap: var(--spacing-sm) !important;
+}
+
+.mapa-container {
+  height: 600px !important;
+}
+
+.info-ubicacion {
+  gap: var(--spacing-xs) !important;
+}
+
+.info-ubicacion .info-item {
+  padding: var(--spacing-xs) !important;
+  border-radius: var(--radius-xl) !important;
+  box-shadow: var(--shadow-sm) !important;
+  border: 6px solid blue !important;
+}
+
+/* Separación vertical entre cajones de ubicación */
+.info-ubicacion .info-item + .info-item {
+  margin-top: var(--spacing-xl) !important;
+}
+
+.info-ubicacion .info-item i {
+  font-size: 1.1rem !important;
+  min-width: 22px !important;
+}
+
+.info-ubicacion .info-item h3 {
+  font-size: 0.95rem !important;
+}
+
+.info-ubicacion .info-item p {
+  line-height: 1.3 !important;
+  font-size: 0.9rem !important;
+}
+
+@media (max-width: 768px) {
+  #ubicacion h2 {
+    font-size: 1.5rem !important;
+  }
+  .mapa-container {
+    height: 220px !important;
+  }
+  .info-ubicacion .info-item i {
+    font-size: 1rem !important;
+    min-width: 20px !important;
+  }
+}
+
+/* Ubicación: mapa grande a ancho completo */
+.mapa-container {
+  aspect-ratio: auto !important;
+  height: 600px !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+@media (max-width: 768px) {
+  .mapa-container {
+    height: 600px !important;
+    max-width: none !important;
+  }
+}
+
+/* Ubicación: fijar el cuadro del mapa para que no cambie de tamaño */
+#ubicacion .mapa-container {
+  border: 6px solid blue; /* Pone un borde sólido azul de 1px */
+  background: transparent !important; /* Mantiene el fondo de la línea transparente */
+  border-radius: var(--radius-xl) !important;
+  height: 600px !important;
+  min-height: 600px !important;
+  position: relative !important; /* para overlay de controles */
+}
+
+#ubicacion #map,
+#ubicacion .mapa,
+#ubicacion .leaflet-container {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Controles superpuestos del mapa */
+#ubicacion .map-controls {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  gap: 8px;
+  z-index: 1000;
+}
+
+#ubicacion .btn-map-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 0.55rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-primary);
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--color-primary);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+}
+
+#ubicacion .btn-map-action:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+body.dark-mode #ubicacion .btn-map-action {
+  background: rgba(18, 18, 18, 0.95);
+  border-color: var(--color-primary-light);
+  color: var(--color-primary-light);
+}
+
+body.dark-mode #ubicacion .btn-map-action:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* Pantalla completa del mapa */
+#ubicacion .mapa-container.fullscreen {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  min-height: 100vh !important;
+  z-index: 9999 !important;
+  border-radius: 0 !important;
+}
+
+/* Ubicación: sin fondo en la sección y en el mapa */
+#ubicacion {
+  background: transparent !important;
+}
+
+body.dark-mode #ubicacion {
+  background: transparent !important;
+}
+
+.mapa {
+  background: transparent !important;
+}
+
+.mapa.cargando {
+  background: transparent !important;
+  animation: none !important;
+}
+
+/* Botón “Cómo llegar” */
+.btn-como-llegar {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-primary);
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  text-decoration: none;
+}
+
+.btn-como-llegar:hover {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+
+body.dark-mode .btn-como-llegar {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary-light);
+  color: #121212;
+}
+
+body.dark-mode .btn-como-llegar:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+/* Mensaje de geolocalización */
+.geo-msg {
+  color: #6b7280; /* gris neutral */
+  font-size: 0.85rem;
+}
+
+body.dark-mode .geo-msg {
+  color: #9ca3af;
+}
+
+/* (Aviso superior removido) */
+/* Habitaciones: organizar tarjetas en fila horizontal (desktop) */
+.habitaciones-acordeon {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: var(--spacing-md) !important;
+}
+
+/* Habitaciones: ampliar ancho del contenedor para imágenes más anchas */
+#habitaciones.container {
+  max-width: 1500px !important;
+  width: 95% !important;
+}
+
+/* Dentro de cada tarjeta: imagen arriba, texto debajo para mejor ajuste */
+.habitaciones-acordeon .acordeon-header {
+  flex-direction: column !important;
+  text-align: center !important;
+}
+
+/* Imagen a ancho completo de la tarjeta en desktop */
+.habitaciones-acordeon .acordeon-header img {
+  width: 100% !important;
+  height: 160px !important;
+  object-fit: cover;
+}
+
+/* Botón "Ver detalles" en tarjetas de Habitaciones */
+.habitaciones-acordeon .btn-ver-detalles,
+.habitaciones-acordeon .acordeon-header .btn-ver-detalles {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  background: var(--color-primary) !important;
+  color: #fff !important;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: var(--spacing-sm);
+  transition: var(--transition-normal);
+  appearance: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.habitaciones-acordeon .btn-ver-detalles:hover {
+  background: var(--color-primary-dark) !important;
+  color: #fff !important;
+  transform: translateY(-1px);
+}
+
+.habitaciones-acordeon .btn-ver-detalles:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+body.dark-mode .habitaciones-acordeon .btn-ver-detalles {
+  background: var(--color-primary) !important;
+  color: #fff !important;
+}
+
+/* Modo claro: estilo alternativo con alto contraste */
+body:not(.dark-mode) .habitaciones-acordeon .btn-ver-detalles {
+  background: #ffffff !important;
+  color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+}
+
+body:not(.dark-mode) .habitaciones-acordeon .btn-ver-detalles:hover {
+  background: var(--color-primary) !important;
+  color: #fff !important;
+}
+
+/* Tablet: 2 columnas */
+@media (max-width: 992px) {
+  .habitaciones-acordeon {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Móvil: 1 columna (ya lo tenía, se asegura aquí) */
+@media (max-width: 768px) {
+  .habitaciones-acordeon {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* (Revert) Habitaciones: mantener tamaños originales en desktop */
+/* (Aviso superior removido; se mantiene etiqueta pequeña junto al botón) */
+/* Header: 70% de alto y márgenes laterales responsivos */
+header {
+  min-height: 70vh !important;
+  /* espacio bajo el navbar para colocar "Hotel ALCYNNE" */
+  margin-top: 9rem !important; /* desktop: un poco más */
+  margin-left: 15% !important; /* desktop */
+  margin-right: 15% !important; /* desktop */
+  border-radius: var(--radius-lg);
+  overflow: hidden; /* recorta el carrusel de fondo dentro del radio */
+}
+
+@media (max-width: 992px) {
+  header {
+    margin-top: 7rem !important; /* tablet: un poco más */
+    margin-left: 10% !important;
+    margin-right: 10% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    margin-top: 4.5rem !important; /* móvil: un poco más */
+    margin-left: 6% !important;
+    margin-right: 6% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    margin-top: 3.5rem !important; /* muy pequeño: un poco más */
+    margin-left: 4% !important;
+    margin-right: 4% !important;
+  }
+}
+/* (Revert) Carrusel de imágenes: restaurar márgenes originales */
+
+/* Franja de marca entre navbar y header */
+.brand-strip {
+  margin-top: calc(
+    var(--nav-height, 75px) + 8px
+  ) !important; /* altura real del navbar + separación */
+  margin-left: 0 !important;
+  margin-right: 0 !important; /* lado a lado */
+  margin-bottom: 12px !important; /* separación con el header */
+  padding: 1rem 0 !important;
+  text-align: center !important;
+  border-top: 2px solid rgba(0, 0, 0, 0.16) !important; /* línea más marcada bajo el navbar */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12) !important;
+  background: #f8fafc !important;
+  border-radius: 0 !important; /* sin esquinas redondeadas para full-width */
+  /* sombra más marcada que refuerza la separación con el navbar */
+  box-shadow: 0 -10px 16px rgba(0, 0, 0, 0.18), 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+.brand-strip-inner {
+  width: 90% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}
+
+.brand-strip .brand-name {
+  font-family: "Playfair Display", serif !important;
+  font-weight: 600 !important;
+  font-style: normal !important;
+  font-size: 4rem !important;
+  letter-spacing: 0.1em !important;
+  line-height: 1.15 !important;
+  color: #000000 !important;
+  text-transform: uppercase !important;
+}
+
+/* Modo oscuro: sin fondo y texto blanco */
+body.dark-mode .brand-strip {
+  background: transparent !important;
+  box-shadow: none !important;
+  border-bottom: none !important;
+  border-top: none !important; /* mantener limpio en oscuro */
+}
+
+body.dark-mode .brand-strip .brand-name {
+  color: #ffffff !important;
+}
+
+@media (max-width: 992px) {
+  .brand-strip {
+    margin-left: 10% !important;
+    margin-right: 10% !important;
+    padding: 0.8rem 0 !important;
+    margin-top: calc(var(--nav-height, 75px) + 6px) !important;
+  }
+  .brand-strip .brand-name {
+    font-size: 3rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-strip {
+    margin-left: 6% !important;
+    margin-right: 6% !important;
+    padding: 0.7rem 0 !important;
+    margin-top: 8px !important; /* navbar estático en móvil: separación fija */
+  }
+  .brand-strip .brand-name {
+    font-size: 2.6rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-strip {
+    margin-left: 4% !important;
+    margin-right: 4% !important;
+    padding: 0.65rem 0 !important;
+    margin-top: 6px !important; /* navbar estático en móvil: separación fija */
+  }
+  .brand-strip .brand-name {
+    font-size: 2.3rem !important;
+    letter-spacing: 0.06em !important;
+    line-height: 1.18 !important;
+  }
+}
+
+/* Subir el header: eliminar margen superior extra ahora que existe la franja */
+header {
+  margin-top: 0 !important;
+}
+
+/* Igualar altura del header al carrusel de imágenes */
+header {
+  height: 500px !important;
+  min-height: 500px !important;
+  padding: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100% !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-lg) !important;
+  border-bottom: none !important;
+  overflow: hidden !important; /* recorta las slides dentro del radio */
+  box-sizing: border-box !important;
+}
+
+/* Asegurar que el carrusel del header se ajuste al contenedor */
+.header-bg-slider,
+.header-bg-slider .header-slide {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: inherit !important;
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 300px !important;
+    min-height: 300px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    height: 250px !important;
+    min-height: 250px !important;
+  }
+}
+/* Fondo global: efecto nube gris claro en todo el sitio */
+body {
+  background: radial-gradient(
+      70% 60% at -8% 25%,
+      rgba(210, 210, 210, 0.55),
+      rgba(210, 210, 210, 0) 68%
+    ),
+    radial-gradient(
+      65% 55% at -15% 70%,
+      rgba(200, 200, 200, 0.4),
+      rgba(200, 200, 200, 0) 64%
+    ),
+    linear-gradient(180deg, #f5f6f8 0%, #ffffff 45%, #f7f8f9 100%) !important;
+  background-color: #ffffff !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+}
+
+@media (max-width: 992px) {
+  body {
+    background: radial-gradient(
+        78% 66% at -16% 22%,
+        rgba(210, 210, 210, 0.5),
+        rgba(210, 210, 210, 0) 66%
+      ),
+      radial-gradient(
+        68% 56% at -20% 70%,
+        rgba(200, 200, 200, 0.36),
+        rgba(200, 200, 200, 0) 62%
+      ),
+      linear-gradient(180deg, #f5f6f8 0%, #ffffff 45%, #f7f8f9 100%) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    background: radial-gradient(
+        92% 72% at -24% 24%,
+        rgba(210, 210, 210, 0.48),
+        rgba(210, 210, 210, 0) 64%
+      ),
+      radial-gradient(
+        78% 60% at -28% 72%,
+        rgba(200, 200, 200, 0.32),
+        rgba(200, 200, 200, 0) 60%
+      ),
+      linear-gradient(180deg, #f5f6f8 0%, #ffffff 45%, #f7f8f9 100%) !important;
+  }
+}
+
+body.dark-mode {
+  background: radial-gradient(
+      65% 58% at -12% 24%,
+      rgba(120, 120, 120, 0.22),
+      rgba(120, 120, 120, 0) 62%
+    ),
+    linear-gradient(180deg, #0f1115 0%, #121417 100%) !important;
+  background-color: #0f1115 !important;
+}
+
+/* Igualar exactamente la altura del header al carrusel de imágenes */
+header {
+  height: 480px !important;
+  min-height: 480px !important;
+  padding: 0 !important; /* evitar que el padding sume altura visible */
+}
+
+/* Evitar que el contenido interno empuje la altura del header */
+.logo {
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 280px !important;
+    min-height: 280px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    height: 230px !important;
+    min-height: 230px !important;
+  }
+}
+
+/* Igualar el ancho del header al .container y centrarlo */
+header {
+  width: 90% !important;
+  max-width: 1200px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media (max-width: 768px) {
+  header {
+    width: 95% !important;
+  }
+}
+
+/* Overlay tipo nube en el lado izquierdo del header */
+/* Quitar overlay nube del header */
+header::before {
+  content: none !important;
+  background: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+header {
+  border: none !important;
+}
+
+header {
+  border-radius: var(--radius-lg) !important;
+}
+
+header {
+  box-shadow: 0 0 0 3px blue, var(--shadow-lg) !important;
+}
+
+.carousel {
+  border: 3px solid blue !important;
+  border-radius: var(--radius-lg) !important;
+}
+
+/* ===== Menú hamburguesa: estilos base ===== */
+.menu-toggle {
+  display: none; /* se muestra solo en móvil */
+  background: transparent;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  width: 44px;
+  height: 44px;
+  color: #000000;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-toggle:hover {
+  background: #f3f4f6;
+}
+
+/* ===== Navbar móvil: evitar textos encimados y colapsar menú ===== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: inline-flex !important;
+    align-self: flex-end;
+    margin: 4px 0 8px;
+  }
+
+  /* Contenedor apilado y de altura automática */
+  .nav-contenedor {
+    height: auto !important;
+    padding: 8px 12px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12) !important;
+    border-bottom: 1px solid #e5e7eb !important;
+  }
+
+  /* Marca en flujo normal */
+  .nav-brand {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    margin-bottom: 6px !important;
+    gap: 0.8rem !important;
+    justify-content: center !important;
+  }
+
+  /* Wrapper visible en móvil (sin colapsar) */
+  .nav-wrapper {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    transform: none !important;
+    height: auto !important;
+    width: 100% !important;
+    display: flex !important; /* visible por defecto */
+  }
+
+  /* Enlaces con wrap */
+  .nav-contenedor ul {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    width: 100% !important;
+  }
+
+  .nav-contenedor a {
+    white-space: normal !important;
+    font-size: 0.95rem !important;
+    padding: 0.45rem 0.65rem !important;
+  }
+
+  .nav-logo {
+    height: 32px !important;
+  }
+
+  .brand-text {
+    font-size: 1.4rem !important;
+    line-height: 1.1 !important;
+  }
+}
+
+/* Muy pequeñas: aún más compacto */
+@media (max-width: 420px) {
+  .nav-contenedor a {
+    font-size: 0.9rem !important;
+    padding: 0.4rem 0.55rem !important;
+  }
+  .brand-text {
+    font-size: 1.25rem !important;
+  }
+}
+
+/* Créditos: unificar color naranja en móvil y escritorio */
+.credits {
+  color: #ff6b00 !important;
+}
+body.dark-mode .credits {
+  color: #ff6b00 !important;
+}
+@media (max-width: 768px) {
+  .credits {
+    color: #ff6b00 !important;
+  }
+}
+
+/* ===== Navbar móvil: evitar textos encimados en Android ===== */
+@media (max-width: 768px) {
+  /* Permitir que el contenedor crezca y se apile */
+  .nav-contenedor {
+    height: auto !important;
+    padding: 8px 12px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12) !important;
+    border-bottom: 1px solid #e5e7eb !important;
+  }
+
+  /* Hacer que la marca participe del flujo normal (evita solaparse) */
+  .nav-brand {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    margin-bottom: 6px !important;
+    gap: 0.8rem !important;
+    justify-content: center !important;
+  }
+
+  /* Alinear el wrapper al centro y sin desplazamientos extra */
+  .nav-wrapper {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    transform: none !important;
+    height: auto !important;
+    width: 100% !important;
+  }
+
+  /* Permitir que los enlaces hagan wrap y no se encimen */
+  .nav-contenedor ul {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    width: 100% !important;
+  }
+
+  .nav-contenedor a {
+    white-space: normal !important;
+    font-size: 0.95rem !important;
+    padding: 0.45rem 0.65rem !important;
+  }
+
+  .nav-logo {
+    height: 32px !important;
+  }
+
+  .brand-text {
+    font-size: 1.4rem !important;
+    line-height: 1.1 !important;
+  }
+}
+
+/* Más compacto aún en pantallas muy pequeñas */
+@media (max-width: 420px) {
+  .nav-contenedor a {
+    font-size: 0.9rem !important;
+    padding: 0.4rem 0.55rem !important;
+  }
+  .brand-text {
+    font-size: 1.25rem !important;
+  }
+}

@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOTEL ALCYNNE - Privacidad, Seguridad, Confort | Tijuana, BC</title>
+    <meta name="description" content="Hotel ALCYNNE en Tijuana ofrece habitaciones privadas, seguras y confortables cerca de la frontera. Estacionamiento privado, WiFi gratis tarifas accesibles.">
+    <meta name="keywords" content="hotel tijuana, hotel frontera, hotel alcynne, hotel económico tijuana, hotel cerca garita">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="HOTEL ALCYNNE - Privacidad, Seguridad, Confort">
+    <meta property="og:description" content="Hotel en Tijuana con habitaciones privadas y seguras cerca de la frontera">
+    <meta property="og:image" content="img/imagen-logo-(17).png">
+
+    <!-- Schema.org para SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Hotel",
+        "name": "Hotel ALCYNNE",
+        "description": "Hotel con privacidad, seguridad y confort en Tijuana",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Avenida Azueta #1589 Colonia Libertad",
+          "addressLocality": "Tijuana",
+          "addressRegion": "BC",
+          "postalCode": "22400",
+          "addressCountry": "MX"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "32.536389",
+          "longitude": "-117.008056"
+        },
+        "priceRange": "$$",
+        "amenityFeature": [
+          { "@type": "LocationFeatureSpecification", "name": "WiFi gratuito" },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Estacionamiento privado"
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Aire acondicionado"
+          }
+        ]
+      }
+    </script>
+
+    <!-- Fuentes -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./style_v2.css">
+    <link rel="stylesheet" href="./style_overrides.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Leaflet CSS para el mapa -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+    <!-- Leaflet Routing Machine CSS (versión fija) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/imagen-logo-(17).png" type="image/png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  </head>
+  <body>
+    <!-- Navegación independiente entre header y carrusel -->
+    <nav class="nav-contenedor" aria-label="Navegación principal">
+      <div class="nav-brand">
+        <img src="img/imagen-18.png" alt="Logo Hotel Alcynne" class="nav-logo">
+        <span class="brand-text">Hotel Alcynne</span>
+      </div>
+
+      <div class="nav-wrapper">
+        <ul id="nav-menu">
+          <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+          <li><a href="#reglamento" class="nav-link">Reglamento</a></li>
+          <li><a href="#habitaciones" class="nav-link">Habitaciones</a></li>
+          <li><a href="#ubicacion" class="nav-link">Ubicación</a></li>
+          <li><a href="#galeria" class="nav-link">Galería</a></li>
+          
+          <li><a href="#pagos" class="nav-link">Pagos</a></li>
+          <li><a href="#wifi" class="nav-link">WiFi</a></li>
+        </ul>
+      </div>
+
+      <button id="dark-mode-toggle" class="dark-mode-btn" aria-label="Activar modo oscuro">
+        <i class="fas fa-moon" aria-hidden="true"></i>
+      </button>
+    </nav>
+
+    <!-- Franja de marca entre navbar y header -->
+    <div class="brand-strip">
+      <div class="brand-strip-inner">
+        <span class="brand-name">HOTEL ALCYNNE</span>
+    </div>
+  </div>
+
+
+    <!-- HEADER CON CARRUSEL DE FONDO -->
+    <header id="headerCarousel">
+      <div class="header-bg-slider"></div>
+    </header>
+
+    <main>
+      <!-- Sección Inicio con Carrusel -->
+      <section id="inicio" class="container inicio-bg">
+        <h1 class="titulo-principal">Bienvenido a Hotel ALCYNNE</h1>
+        <h2 class="titulo-secundario">Tu Descanso es Nuestra Prioridad</h2>
+        <img src="img/imagen-logo-(17).png" alt="Logo del Hotel Alcynne" width="220" loading="lazy">
+      </section>
+
+      <div id="carrusel" class="container">
+        <div class="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="img/imagen-01.jpg" alt="Habitación elegante con cama Queen Size en Hotel Alcynne" loading="eager">
+            </div>
+            <div class="carousel-item">
+              <img src="img/imagen-02.jpg" alt="Baño moderno y limpio en Hotel Alcynne" loading="lazy">
+            </div>
+            <div class="carousel-item">
+              <img src="img/imagen-03.jpg" alt="Recepción acogedora de Hotel Alcynne" loading="lazy">
+            </div>
+          </div>
+          <button class="carousel-button prev" aria-label="Imagen anterior">
+            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          <button class="carousel-button next" aria-label="Imagen siguiente">
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Sección Nosotros -->
+      <section id="nosotros" class="container">
+        <h2>A NUESTROS CLIENTES</h2>
+        <div class="valores-principales">
+          <h3>Privacidad, Seguridad, Confort</h3>
+          <p class="valores-descripcion">
+            Nos Tomamos Muy en Serio Su Privacidad
+          </p>
+        </div>
+        <p>
+          En Hotel ALCYNNE, cada detalle está pensado para ofrecerte una
+          experiencia única donde la <strong>privacidad</strong> es respetada,
+          la <strong>seguridad</strong> es prioridad y el
+          <strong>confort</strong> se siente en cada rincón. Nuestro ambiente
+          moderno y acogedor está diseñado para familias que buscan
+          tranquilidad, descanso y atención personalizada. Aquí, te sentirás
+          como en casa, rodeado de confianza y bienestar.
+        </p>
+      </section>
+
+      <!-- Sección Reglamento -->
+      <section id="reglamento" class="container">
+        <h2>REGLAMENTO INTERNO Y POLÍTICAS DE ESTANCIA</h2>
+
+        <div class="reglamento-content">
+          <h3>1. Ocupación y Acceso</h3>
+          <ul>
+            <li>
+              <strong>Visitas:</strong> Por estricta seguridad y bienestar de
+              nuestros huéspedes, queda prohibido el acceso de visitas no
+              registradas a las instalaciones y habitaciones del hotel.
+            </li>
+            <li>
+              <strong>Capacidad Adicional:</strong> Se acepta un máximo de una
+              persona adicional por habitación. Este servicio está sujeto a un
+              cargo nocturno de $200 pesos MXN (o su equivalente en USD).
+            </li>
+          </ul>
+
+          <h3>2. Estacionamiento y Vehículos</h3>
+          <ul>
+            <li>
+              <strong>Exclusión de Responsabilidad:</strong> El hotel declina
+              toda responsabilidad por daños, hurtos o pérdidas que puedan
+              sufrir los vehículos estacionados en la propiedad.
+            </li>
+            <li>
+              <strong>Vehículos Eléctricos (EV):</strong> Por protocolos de
+              prevención de riesgos, no se permite el estacionamiento ni el
+              ingreso de vehículos eléctricos (EV) a las instalaciones. El
+              huésped asume la responsabilidad total e íntegra por cualquier
+              siniestro (incluyendo incendios) que dicho vehículo ocasione a la
+              propiedad.
+            </li>
+          </ul>
+
+          <h3>3. Pertenencias Personales</h3>
+          <ul>
+            <li>
+              <strong>Objetos Olvidados:</strong> No asumimos responsabilidad
+              alguna por la pérdida o extravío de objetos personales dejados en
+              las habitaciones o áreas comunes tras el check-out.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- SECCIÓN HABITACIONES -->
+      <section id="habitaciones" class="container">
+        <h2>NUESTRAS HABITACIONES</h2>
+        <p class="section-subtitle">
+          Haz clic en cualquier habitación para ver los detalles
+        </p>
+
+        <div class="habitaciones-acordeon">
+          <!-- Habitación 1 -->
+          <article class="acordeon-item">
+            <div class="acordeon-header">
+              <img src="img/imagen-01.jpg" alt="Habitación de tiempo limitado" loading="lazy">
+              <div class="acordeon-info">
+                <h3>HABITACIÓN TIEMPO LIMITADO - 4 HORAS</h3>
+                <p class="habitacion-capacidad">Máximo 2 personas</p>
+                <p class="habitacion-precio">$500 MXN</p>
+                <button class="btn-ver-detalles" type="button" aria-label="Ver detalles">
+                  Ver detalles
+                </button>
+              </div>
+            </div>
+            <div class="acordeon-detalles">
+              <ul>
+                <li>✅ Precio: $500 pesos</li>
+                <li>✅ Máximo 2 personas por habitación</li>
+                <li>✅ Solo una persona adicional permitida por habitación, con un costo de $200 pesos
+                <li>✅ Depósito Reembolsable por Mascota: $500.pesos que se le devolverán al momento de su salida, siempre que la habitaciónno presente daños causados por su mascota.
+                <li>✅ Cama Queen Size</li>
+                <li>✅ Estacionamiento privado</li>
+                <li>✅ Aire Acondicionado</li>
+                <li>✅ Wi-Fi Gratis</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Habitación 2 -->
+          <article class="acordeon-item">
+            <div class="acordeon-header">
+              <img src="img/imagen-02.jpg" alt="Habitación sencilla" loading="lazy">
+              <div class="acordeon-info">
+                <h3>HABITACIÓN SENCILLA</h3>
+                <p class="habitacion-capacidad">Máximo 2 personas</p>
+                <p class="habitacion-precio">$1,300 MXN / 24 horas</p>
+                <button class="btn-ver-detalles" type="button" aria-label="Ver detalles">
+                  Ver detalles
+                </button>
+              </div>
+            </div>
+            <div class="acordeon-detalles">
+              <ul>
+                <li>✅ Precio: $1,300 pesos</li>
+                <li>✅ Estancia por 24 horas</li>
+                <li>✅ Cama Queen Size</li>
+                <li>✅ Solo una persona adicional permitida por habitación, con un costo de $200 pesos
+                <li>✅ Depósito Reembolsable por Mascota: $500.pesos que se le devolverán al momento de su salida, siempre que la habitación no presente daños causados por su mascota.
+                <li>✅ Estacionamiento privado</li>
+                <li>✅ Wi-Fi gratuito</li>
+                <li>✅ Aire Acondicionado</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Habitación 3 -->
+          <article class="acordeon-item">
+            <div class="acordeon-header">
+              <img src="img/imagen-03.jpg" alt="Habitación doble" loading="lazy">
+              <div class="acordeon-info">
+                <h3>HABITACIÓN DOBLE</h3>
+                <p class="habitacion-capacidad">Máximo 4 personas</p>
+                <p class="habitacion-precio">$1,600 MXN / 24 horas</p>
+                <button class="btn-ver-detalles" type="button" aria-label="Ver detalles">
+                  Ver detalles
+                </button>
+              </div>
+            </div>
+            <div class="acordeon-detalles">
+              <ul>
+                <li>✅ Precio: $1,600 pesos</li>
+                <li>✅ Estancia por 24 horas</li>
+                <li>✅ 2 Camas Queen Size</li>
+                <li>✅ Solo una persona adicional permitida por habitación, con un costo de $200 pesos
+                <li>✅ Depósito Reembolsable por Mascota: $500.pesos que se le devolverán al momento de su salida, siempre que la habitación no presente daños causados por su mascota.
+                <li>✅ Estacionamiento privado</li>
+                <li>✅ Wi-Fi gratuito</li>
+                <li>✅ Aire Acondicionado</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SECCIÓN UBICACIÓN -->
+      <section id="ubicacion" class="container">
+        <h2>NUESTRA UBICACIÓN</h2>
+        <p class="section-subtitle">
+          Encuentra fácilmente Hotel ALCYNNE en Tijuana
+        </p>
+
+        <div class="ubicacion-content">
+          <div class="mapa-container">
+            <div id="map" class="mapa"></div>
+            <!-- Controles del mapa: Recentrar y Pantalla completa -->
+            <div class="map-controls" aria-label="Controles del mapa">
+              <button id="btnMapRecenter" class="btn-map-action" title="Recentrar al hotel" aria-label="Recentrar al hotel">
+                <i class="fas fa-home" aria-hidden="true"></i>
+              </button>
+              <button id="btnMapFullscreen" class="btn-map-action" title="Pantalla completa" aria-label="Pantalla completa">
+                <i class="fas fa-expand" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="info-ubicacion">
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+              <div>
+                <h3>Dirección Exacta</h3>
+                <p>
+                  Hotel ALCYNNE<br>
+                  Avenida Azueta #1589 Colonia Libertad<br>
+                  CP 22400, Tijuana, BC, México
+                </p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i class="fas fa-border-crossing" aria-hidden="true"></i>
+              <div>
+                <h3>Acceso Fronterizo</h3>
+                <p>
+                  Cerca de Garita San Ysidro<br>
+                  Fácil acceso desde USA<br>
+                  Zona estratégica fronteriza
+                </p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i class="fas fa-location-arrow" aria-hidden="true"></i>
+              <div>
+                <h3>¿Cómo Llegar?</h3>
+                <p>
+                  Desde USA: Cruce por San Ysidro<br>
+                  Desde Aeropuerto: 10 min en taxi<br>
+                  Transporte público disponible
+                </p>
+                <p style="margin-top: 0.5rem">
+                  <a
+                    id="btnComoLlegar"
+                    class="btn-como-llegar"
+                    href="https://www.google.com/maps/dir/?api=1&destination=32.536389,-117.008056"
+                    target="_blank"
+                    rel="noopener"
+                    >Cómo llegar</a
+                  >
+                  <small
+                    id="geoMsg"
+                    class="geo-msg"
+                    style="display: none; margin-left: 0.5rem"
+                    >Para ver la ruta desde tu ubicación, permite la
+                    geolocalización.</small
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección Galería -->
+      <section id="galeria" class="container">
+        <h2>GALERÍA</h2>
+        <div class="product-grid">
+          <a href="img/imagen-01.jpg" aria-label="Ver imagen de habitación 1">
+            <img src="img/imagen-01.jpg" class="img-galeria" alt="Habitación elegante 1" loading="lazy">
+          </a>
+          <a href="img/imagen-02.jpg" aria-label="Ver imagen de habitación 2">
+            <img src="img/imagen-02.jpg" class="img-galeria" alt="Habitación elegante 2" loading="lazy">
+          </a>
+          <a href="img/imagen-03.jpg" aria-label="Ver imagen de habitación 3">
+            <img src="img/imagen-03.jpg" class="img-galeria" alt="Habitación elegante 3" loading="lazy">
+          </a>
+          <a href="img/imagen-04.jpg" aria-label="Ver área común 1">
+            <img src="img/imagen-04.jpg" class="img-galeria" alt="Área común espaciosa" loading="lazy">
+          </a>
+          <a href="img/imagen-05.jpg" aria-label="Ver área común 2">
+            <img src="img/imagen-05.jpg" class="img-galeria" alt="Área de descanso" loading="lazy">
+          </a>
+          <a href="img/imagen-06.jpg" aria-label="Ver recepción">
+            <img src="img/imagen-06.jpg" class="img-galeria" alt="Recepción del hotel" loading="lazy">
+          </a>
+          <a href="img/imagen-07.jpg" aria-label="Ver baño suite">
+            <img src="img/imagen-07.jpg" class="img-galeria" alt="Baño moderno de suite" loading="lazy">
+          </a>
+          <a href="img/imagen-08.jpg" aria-label="Ver vista exterior">
+            <img src="img/imagen-08.jpg" class="img-galeria" alt="Vista exterior del hotel" loading="lazy">
+          </a>
+          <a href="img/imagen-09.jpg" aria-label="Ver habitación familiar">
+            <img src="img/imagen-09.jpg" class="img-galeria" alt="Habitación familiar amplia" loading="lazy">
+          </a>
+          <a href="img/imagen-10.jpg" aria-label="Ver detalles de decoración">
+            <img src="img/imagen-10.jpg" class="img-galeria" alt="Detalles de decoración elegante" loading="lazy">
+          </a>
+          <a href="img/imagen-11.jpg" aria-label="Ver sala de espera">
+            <img src="img/imagen-11.jpg" class="img-galeria" alt="Sala de espera Cómo" loading="lazy">
+          </a>
+          <a href="img/imagen-12.jpg" aria-label="Ver entrada principal">
+            <img src="img/imagen-12.jpg" class="img-galeria" alt="Entrada principal del hotel" loading="lazy">
+          </a>
+        </div>
+      </section>
+
+      <!-- Sección Contacto -->
+      <section id="contacto-form" class="container">
+        <h2>CONTACTO</h2>
+        <div class="contacto-item">
+          <form
+            id="formContacto"
+            action="https://formsubmit.co/hotel_alcynne@hotmail.com"
+            method="POST">
+            <input
+              type="hidden"
+              name="_subject"
+              value="Nuevo mensaje desde Hotel Alcynne">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="_honey" style="display: none" aria-hidden="true">
+            <input type="hidden" name="_next" value="gracias.html">
+
+            <div class="form-grid">
+              <label
+                >Nombre
+                <input type="text" name="nombre" required aria-required="true">
+              </label>
+              <label
+                >Correo electrónico
+                <input type="email" name="email" required aria-required="true">
+              </label>
+              <label
+                >Asunto
+                <input type="text" name="asunto" required aria-required="true">
+              </label>
+            </div>
+
+            <button type="submit" class="btn-enviar">Enviar</button>
+            <p id="contacto-msg" class="contacto-msg" aria-live="polite" style="display: none">
+              Gracias por tu mensaje. Te contactaremos pronto.
+            </p>
+          </form>
+        </div>
+      </section>
+
+      <!-- Sección Pagos y WiFi -->
+      <section id="contacto" class="container">
+        <div id="pagos" class="contacto-item">
+          <h3>PAGO CON TARJETA</h3>
+          <p>aceptamos tarjeta de crédito</p>
+          <img src="img/imagen-17.jpg" alt="Tarjetas de crédito aceptadas: Mastercard, Visa y American Express" class="img-pagos" loading="lazy">
+        </div>
+
+        <div id="wifi" class="contacto-item">
+          <h3>CONÉCTATE AL WIFI</h3>
+          <p>escanea el código QR y conéctate al wifi</p>
+          <img src="img/imagen-18.jpg" alt="Código QR para acceso WiFi del Hotel Alcynne" class="img-qr" loading="lazy">
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-top">
+        <div class="footer-col left">
+          <h3>Hotel Alcynne</h3>
+          <p>Tu destino perfecto para una experiencia inolvidable</p>
+        </div>
+        <div class="footer-col center footer-social">
+          <h3>Síguenos</h3>
+          <div class="social-links">
+            <a href="https://www.facebook.com/hotel.alcynne" target="_blank" rel="noopener noreferrer" aria-label="Abrir Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/lexi_trwergafszgaregtregfd" target="_blank" rel="noopener noreferrer" aria-label="Abrir Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/MissasfdgfdgfsdfbbgsmahmsdfgfSinfonia" target="_blank" rel="noopener noreferrer" aria-label="Abrir Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://wa.me/+526641234567" target="_blank"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-col right legal-links">
+          <h3>Información Legal</h3>
+          <div class="legal-links-container">
+            <a href="aviso-legal.html">Aviso Legal</a>
+            <a href="politicas-privacidad.html">Políticas de Privacidad</a>
+            <a href="politicas-empresa.html">Políticas de la Empresa</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-logo">
+          <img src="img/logo-02.png" alt="Logo Hotel Alcynne" class="footer-logo-img" width="150" height="100">
+        </div>
+        <div class="footer-text">
+          <p>&copy; 2024 Hotel Alcynne. Todos los derechos reservados.</p>
+          <p class="credits">© Diseños y Creación por WebComDesign.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Botón Scroll Top -->
+    <button id="btnScrollTop" class="btn-scroll-top" aria-label="Volver arriba">
+      <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </button>
+    <!-- Leaflet JS para el mapa -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      crossorigin=""
+    ></script>
+    <!-- Leaflet Routing Machine JS (versión fija) -->
+    <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
